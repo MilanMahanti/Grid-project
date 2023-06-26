@@ -37,12 +37,40 @@ body{
     height: 50px;
     width:50px  ;
 }
-.navbar .bar{
+.bar1,.bar2,.bar3{
     background-color: black;
     height: 4px;
     width: 36px;
     margin: 2px;
     border-radius: 10px;
+}
+.mobile-nav{
+    width: 80px;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    right: -160px;
+    padding: 16px;
+    transition: transform 0.5s;
+}
+.mobile-nav img{
+    width: 24px;
+    height: 24px;
+}
+.mobile-nav a{
+    text-decoration: none;
+    color: black;
+    margin: 16px 0;
+
+}
+.opennav{
+    transform: translateX(-160px);
 }
 .project{
     /* width: 300px; */
@@ -128,6 +156,18 @@ body{
 .hamburgur{
     display: none;
 }
+.animatebar1{
+    animation: rotatebar1 1s ;
+    animation-fill-mode: forwards;
+}
+.animatebar2{
+    animation: fadebar2 1s ;
+    animation-fill-mode: forwards;
+}
+.animatebar3{
+    animation: rotatebar3 1s ;
+    animation-fill-mode: forwards;
+}
 @media only screen and (max-width:1100px) {
     .project-grid{
         display: grid;
@@ -184,4 +224,30 @@ body{
         margin-top: 100px;
     }
     
+}
+@keyframes fadebar2{
+    from{
+        transform: scalex(1);
+        opacity: 1;
+    }
+    to{
+        transform: scalex(0);
+        opacity: 0;
+    }
+}
+@keyframes rotatebar1{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(45deg) translate(1px,10px);
+    }
+}
+@keyframes rotatebar3{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(-45deg) translate(1px,-10px);
+    }
 }
